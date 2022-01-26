@@ -7,49 +7,12 @@ app.use(helmet());
 
 app.use(helmet.hidePoweredBy());
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+// Sets "X-Frame-Options: DENY"
+app.use(
+  helmet.frameguard({
+    action: "deny",
+  })
+);
 
 module.exports = app;
 const api = require('./server.js');
