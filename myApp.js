@@ -1,6 +1,7 @@
 const express = require('express');
 const app = express();
 
+var pjson = require('./package.json');
 
 
 
