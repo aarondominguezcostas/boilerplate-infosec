@@ -17,6 +17,9 @@ app.use(
 // Sets "X-XSS-Protection: 0"
 app.use(helmet.xssFilter());
 
+// Sets "X-Content-Type-Options: nosniff"
+app.use(helmet.noSniff());
+
 module.exports = app;
 const api = require('./server.js');
 app.use(express.static('public'));
