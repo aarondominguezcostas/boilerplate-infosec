@@ -23,6 +23,15 @@ app.use(helmet.noSniff());
 // Sets "X-Download-Options: noopen"
 app.use(helmet.ieNoOpen());
 
+let maxAge = 90*24*60*60;
+
+app.use(
+  helmet.hsts({
+    maxAge: maxAge,
+    force: true,
+  })
+);
+
 module.exports = app;
 const api = require('./server.js');
 app.use(express.static('public'));
