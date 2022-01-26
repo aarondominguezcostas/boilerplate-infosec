@@ -20,6 +20,9 @@ app.use(helmet.xssFilter());
 // Sets "X-Content-Type-Options: nosniff"
 app.use(helmet.noSniff());
 
+// Sets "X-Download-Options: noopen"
+app.use(helmet.ieNoOpen());
+
 module.exports = app;
 const api = require('./server.js');
 app.use(express.static('public'));
