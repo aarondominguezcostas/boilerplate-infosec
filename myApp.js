@@ -36,6 +36,15 @@ app.use(helmet.dnsPrefetchControl());
 
 app.use(helmet.noCache());
 
+app.use(
+  helmet.contentSecurityPolicy({
+    directives: {
+      "script-src": ["'self'"],
+      "script-src" : ["'self'", "'trusted-cdn.com'"],
+    },
+  })
+);
+
 module.exports = app;
 const api = require('./server.js');
 app.use(express.static('public'));
