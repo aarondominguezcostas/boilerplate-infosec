@@ -40,7 +40,7 @@ app.use(
   helmet.contentSecurityPolicy({
     directives: {
       "script-src": ["'self'"],
-      "script-src" : ["'self'", "'trusted-cdn.com'"],
+      "script-src" : ["'self'", 'trusted-cdn.com'],
     },
   })
 );
