@@ -7,7 +7,7 @@ var express = require('express');
 var app = express();
 var fs = require('fs');
 var path = require('path');
-const bcrypt = require('bcrypt');
+let bcrypt = require('bcrypt');
 
 app.use(function(req, res, next) {
   res.set({
